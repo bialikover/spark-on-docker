@@ -1,30 +1,12 @@
-# Spark on docker
+# Spark an Jupyter notebooks on docker
 
- Run Apache spark using docker.
+ Run Apache spark and jupyter notebooks using docker.
 
-## Run docker compose:
+## Run container and pass your volume to mount:
 ```sh
-docker-compose up
+docker run -it --rm -p 8888:8888 -p 4040-4050:4040-4050 -v <your_volume>:/home/jovyan/work jupyter/pyspark-notebook
 ```
 
-### To run a single container:
-```sh
-docker start spark-master
-docker start spark-worker-1
-```
+### Eg. mounted volume <your_volume>:
 
-### To Connect to container:
-```sh
-docker exec -it spark-master bash
-docker exec -it spark-worker-1 bash
-```
-
-### Mounted Volume:
-
-`./home => /home`
-
-## Run basic example
-
-```sh
-spark/bin/spark-submit /home/codeExample.py home/data.csv
-```
+`/Users/<your_user>/Desktop/spark-on-docker/home:/home/jovyan/work`
