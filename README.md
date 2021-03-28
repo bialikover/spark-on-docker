@@ -1,5 +1,6 @@
 # Spark on docker
-- Run spark using docker.
+
+ Run Apache spark using docker.
 
 ## Run docker compose:
 ```sh
@@ -20,7 +21,10 @@ docker exec -it spark-worker-1 bash
 
 ### Mounted Volume:
 
-- ./home => /home
+`./home => /home`
 
 ## Run basic example
+
+```sh
 spark/bin/spark-submit /home/codeExample.py home/data.csv
+```
